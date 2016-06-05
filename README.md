@@ -39,14 +39,44 @@ One called `$clientname$.ovpn` and the other called `$clientname$-external.ovpn`
 2. Change the first remote address to be your internal network ip
 3. Change the second remote address to be your external connection details
 
-#### Using VIM for Creating the Client File
+#### Using VIM for Create the Client files
 I use [vim][1] to quickly create new files if this is not what you want then look at the `Manual Copy Method` below
+
+#### Using VIM for Create the Client files (easy)
+This is the easiest method now and what I'm going to be using.
+__you need to have gvim and vim in your system path variable for it to work__
+
+Delete the two vim lines in the XXX.ovpn (since this method doesn't need them) (they start with # %s )
+
+Edit the `clientgen.vim` file
+
+If you aren't going to create two files then delete the first command and change the Ccs to Cc (or modify the bat file to call Ccs instead of Cc)
+
+If you do want to create two then modify the %s/^remote 192\.168\.0\.2 to match the first remote line in your XXX.ovpn
+
+#### Using VIM for Creating the Client File (manual)
 
 If you aren't going to create two files then delete the first %s line since we should only need the second
 
 If you do want to create two then modify the %s/^remote 192\.168\.0\.2 to match the first remote line later in the file (and delete the second %s)
 
-#### Create client specific file (VIM)
+#### Create client specific file (VIM easy)
+
+1. open a command prompt in the client directory
+2. type `makeclientfile clientname` where clientname is the name of the client files to create (note fails with spaces)
+
+or
+
+1. run the makeclientfile.bat
+2. type the name of the client (once again doesn't allow spaces)
+
+or
+
+1. run the makeclientfile.bat
+2. press enter (without client name)
+3. type `:Cc clientname` and press enter `:Ccs clientname` if you are only creating a single file
+
+#### Create client specific file (VIM manual)
 1. Run a command ine vim to replace XXX with your client name e.g., `:%s/XXX/ClientName/g`
 2. Copy the %s line in the file now and run the whole thing, this creates the ClientName.ovpn file (and potentially the ClientName-external.ovpn file)
 3. Press u to undo the YYY change and you are ready to do another client
