@@ -19,6 +19,7 @@ Under `vpn` I have two folders one for the `client` and one for the `server` fil
 ## Server
 1. Modify the `server.ovpn` file to suit your requirements
 2. Include all the files listed in the `ServersRequire.txt`
+
 ## Client
 You will need to include the files listed in the `ClientsRequire.txt` file.
 
@@ -62,6 +63,7 @@ If you are not going to use vim then in XXX.ovpn delete the two lines starting w
 
 #### Create client specific file (Manual)
 Then when creating the actual client file:
+
 1. Search and replace the XXX with the name of the client key files
 2. Save as a different file (so that you don't need to redo the XXX part)
 3. Remove the first (local) remote address
