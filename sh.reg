@@ -1,0 +1,22 @@
+Windows Registry Editor Version 5.00
+
+[HKEY_CLASSES_ROOT\.sh]
+@="sh_auto_file"
+
+[HKEY_CLASSES_ROOT\sh_auto_file]
+@="Shell Script"
+
+[HKEY_CLASSES_ROOT\sh_auto_file\DefaultIcon]
+@="%SystemRoot%\\System32\\shell32.dll,-153"
+
+[HKEY_CLASSES_ROOT\sh_auto_file\shell]
+
+[HKEY_CLASSES_ROOT\sh_auto_file\shell\open]
+
+[HKEY_CLASSES_ROOT\sh_auto_file\shell\open\command]
+@="\"C:\\Program Files\\Git\\bin\\sh.exe\" --no-cd \"%L\" %*"
+
+[HKEY_CLASSES_ROOT\sh_auto_file\shell\opengitbash]
+
+[HKEY_CLASSES_ROOT\sh_auto_file\shell\opengitbash\command]
+@="\"C:\\Program Files\\Git\\git-bash.exe\" --no-cd \"%L\" %*"

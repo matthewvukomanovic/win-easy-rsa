@@ -1,0 +1,7 @@
+ca.crt
+dh2048.pem
+server.crt
+server.key
+ta.key
+
+then ovpn files
